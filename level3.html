@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Riddle Website - Level 3</title>
+  <script>
+    function checkAnswer(level) {
+      var answer = document.getElementById("answer").value.toLowerCase();
+      var nextLevelButton = document.getElementById("next-level-button");
+
+      if (level === 3 && answer === "egg") {
+        nextLevelButton.style.display = "block";
+      } else {
+        alert("Incorrect answer. Please try again.");
+      }
+    }
+  </script>
+  <style>
+    #next-level-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Level 3</h1>
+  <p>I can be cracked, made, told, and played. What am I?</p>
+  <input type="text" id="answer">
+  <button onclick="checkAnswer(3)">Submit</button>
+
+  <div id="next-level-button">
+    <button onclick="nextLevel(4)">Next Level</button>
+  </div>
+</body>
+</html>
