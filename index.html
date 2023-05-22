@@ -1,61 +1,54 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-<style>
-  
-  body{
-        text-align: center;
-        background-image: linear-gradient(rgb(156, 255, 145), rgb(87, 255, 69), rgb(238, 255, 0), rgb(255, 204, 0), rgb(255, 0, 34), rgb(230, 115, 0));
-        min-width: 100%;
-        min-height: 100%;
+  <title>Riddle Website</title>
+  <script>
+    function checkAnswer(level) {
+      var answer = document.getElementById("answer").value.toLowerCase();
+      var nextLevelButton = document.getElementById("next-level-button");
+
+      if (level === 1 && answer === "echo") {
+        nextLevelButton.style.display = "block";
+      } else if (level === 2 && answer === "footsteps") {
+        nextLevelButton.style.display = "block";
+      } else if (level === 3 && answer === "egg") {
+        document.getElementById("win-message").style.display = "block";
+      } else {
+        alert("Incorrect answer. Please try again.");
       }
-
-  .giraffe text{
-    color :rgb(0, 204, 156); 
-  }
-  .dragon text{
-    color :rgb(255, 102, 0)
-    
-    
-    
-  }
-  
-  h1 {
-  font-size: 80px;
-}
-  
-  p {
-   font-size: 30px;
-  }
-  
-  
+    }
+  </script>
+  <style>
+    #next-level-button {
+      display: none;
+    }
+    #win-message {
+      display: none;
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 100px;
+    }
   </style>
-
-
-
 </head>
-
 <body>
+  <h1>Level 1</h1>
+  <p>I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?</p>
+  <input type="text" id="answer">
+  <button onclick="checkAnswer(1)">Submit</button>
 
-<h1>real and imaginary creatures</h1>
-  
-  <h2>girafes</h2>
-<iframe src="https://giphy.com/embed/hFmIU5GQF18Aw" width="343" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/loop-problem-hFmIU5GQF18Aw"></a></p>
+  <div id="next-level-button">
+    <button onclick="nextLevel(2)">Next Level</button>
+  </div>
 
-  
- <p id= "giraffe text"> <strong>The giraffe is a tall African mammal belonging to the genus Giraffa. Specifically, It is an even-toed ungulate. It is the tallest living terrestrial animal and the largest ruminant on Earth.<br> Traditionally, giraffes were thought to be one species, Giraffa camelopardalis, with nine subspecies. Most recently, researchers proposed dividing giraffes into up to eight extant species due to new research into their mitochondrial and nuclear DNA,<br> as well as morphological measurements. Seven other extinct species of Giraffa are known from the fossil record.
+  <div id="win-message">
+    <p>You win!</p>
+  </div>
 
-The giraffe's chief distinguishing characteristics are its extremely long neck and legs, its horn-like ossicones, and its spotted coat patterns.<br> It is classified under the family Giraffidae, along with its closest extant relative, the okapi. Its scattered range extends from Chad in the north to South Africa in the south, and from Niger in the west to Somalia in the east.<br> Giraffes usually inhabit savannahs and woodlands. Their food source is leaves, fruits, and flowers of woody plants, primarily acacia species, which they browse at heights most other herbivores cannot reach.<br>
-
-Lions, leopards, spotted hyenas, and African wild dogs may prey upon giraffes. Giraffes live in herds of related females and their offspring, or bachelor herds of unrelated adult males, but are gregarious and may gather in large aggregations.<br> Males establish social hierarchies through "necking,” which are combat bouts where the neck is used as a weapon. Dominant males gain mating access to females, which bear the sole responsibility for raising the young.<strong> <p>
-  <h2 >dragons<h2>
-  <img src="https://wallpaperaccess.com/full/462508.jpg" hieght="200px" width="400">
-  
-  <p id= "dragon text" >A dragon is a large, serpentine, legendary creature that appears in the folklore of many cultures worldwide. Beliefs about dragons vary considerably through regions, but dragons in western cultures since the High Middle Ages have often been depicted as winged, horned, four-legged, and capable of breathing fire.<br>> Dragons in eastern cultures are usually depicted as wingless, four-legged, serpentine creatures with above-average intelligence.<br>The earliest attested reports of draconic creatures resemble giant snakes. Draconic creatures are first described in the mythologies of the ancient Near East and appear in ancient Mesopotamian art and literature.<br> Stories about storm-gods slaying giant serpents occur throughout nearly all Indo-European and Near Eastern mythologies. Famous prototypical draconic creatures include the<br> mušḫuššu of ancient Mesopotamia; Apep in Egyptian mythology; Vṛtra in the Rigveda; the Leviathan in the Hebrew Bible; Grand'Goule in the Poitou region in France; Python, Ladon, Wyvern, Kulshedra in Albanian Mythology ,and the Lernaean Hydra in Greek mythology; Jörmungandr, Níðhöggr, and Fafnir in Norse mythology; and the dragon from Beowulf. <p>
-  
-  
-
+  <script>
+    function nextLevel(level) {
+      window.location.href = "level" + level + ".html";
+    }
+  </script>
 </body>
-
-
-    </html>
+</html>
