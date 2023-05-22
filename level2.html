@@ -1,33 +1,18 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Riddle Website - Level 2</title>
   <script>
-    function checkAnswer(level) {
-      var answer = document.getElementById("answer").value.toLowerCase();
-      var nextLevelButton = document.getElementById("next-level-button");
-
-      if (level === 2 && answer === "footsteps") {
-        nextLevelButton.style.display = "block";
-      } else {
-        alert("Incorrect answer. Please try again.");
-      }
+    function nextLevel() {
+      window.location.href = "https://ss-a-l-e-hh.github.io/saleh.github.io/level3.html";
     }
   </script>
-  <style>
-    #next-level-button {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <h1>Level 2</h1>
-  <p>the more you take, the more you leave behind. What am I?</p>
+  <p>More you take, the more you leave behind. What am I?</p>
   <input type="text" id="answer">
-  <button onclick="checkAnswer(2)">Submit</button>
-
-  <div id="next-level-button">
-    <button onclick="nextLevel(3)">Next Level</button>
-  </div>
+  <button onclick="nextLevel()">Next Level</button>
 </body>
 </html>
