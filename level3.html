@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Riddle Website - Level 3</title>
+  <title>Riddle Website - Level 3</title>
   <script>
-    function nextLevel() {
-      window.location.href = "https://ss-a-l-e-hh.github.io/saleh.github.io/level1.html";
+    function checkAnswer() {
+      var answer = document.getElementById("answer").value.toLowerCase();
+      var winMessage = document.getElementById("win-message");
+
+      if (answer === "joke") {
+        winMessage.style.display = "block";
+      } else {
+        alert("Incorrect answer. Please try again.");
+      }
     }
   </script>
+  <style>
+    #win-message {
+      display: none;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 200px;
+    }
+  </style>
 </head>
 <body>
   <h1>Level 3</h1>
   <p>I can be cracked, made, told, and played. What am I?</p>
   <input type="text" id="answer">
-  <button onclick="nextLevel()">Next Level</button>
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="win-message">
+    <p>You win!</p>
+  </div>
 </body>
 </html>
