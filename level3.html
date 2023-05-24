@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html>
 <head>
   <title>Riddle Website - Level 3</title>
   <script>
-    function checkAnswer() {
+    function checkAnswer(level) {
       var answer = document.getElementById("answer").value.toLowerCase();
-      var winMessage = document.getElementById("win-message");
+      var nextLevelButton = document.getElementById("next-level-button");
 
-      if (answer === "joke") {
-        winMessage.style.display = "block";
+    if (answer === "egg") {
+        alert("You win!");
       } else {
         alert("Incorrect answer. Please try again.");
-      }
-    }
-  </script>
-  <style>
-    #win-message {
-      display: none;
-      font-size: 48px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 200px;
-    }
+  
   </style>
 </head>
 <body>
   <h1>Level 3</h1>
   <p>I can be cracked, made, told, and played. What am I?</p>
   <input type="text" id="answer">
-  <button onclick="checkAnswer()">Submit</button>
+  <button onclick="checkAnswer(3)">Submit</button>
 
-  <div id="win-message">
-    <p>You win!</p>
+  <div id="next-level-button">
+    <button onclick="nextLevel(4)">Next Level</button>
   </div>
+  <button onclick="nextLevel()">Next Level</button>
 </body>
 </html>
